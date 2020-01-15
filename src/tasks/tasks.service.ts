@@ -21,7 +21,9 @@ export class TasksService {
     }
 
     if (search) {
-      tasks = tasks.filter(task => task.title.includes(search) || task.description.includes(search));
+      tasks = tasks.filter(
+        task => task.title.includes(search) || task.description.includes(search)
+      );
     }
 
     return tasks;
