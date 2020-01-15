@@ -30,10 +30,10 @@ export class TasksService {
     return task;
   }
 
-  updateTask(id: string, status: TaskStatus) {
+  updateTaskStatus(id: string, status: TaskStatus): Task {
     const task = this.getTaskById(id);
-
     task.status = status;
+    return task;
   }
 
   deleteTask(id: string): void {
