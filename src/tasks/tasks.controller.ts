@@ -59,7 +59,7 @@ export class TasksController {
     @GetUser() user: User
   ): Promise<Task> {
     this.logger.verbose(
-      `User ${user.username} creating task. Params: ${JSON.stringify(
+      `User ${user.username} creating task. Data: ${JSON.stringify(
         createTaskDto
       )}`
     );
