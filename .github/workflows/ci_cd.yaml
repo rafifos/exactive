@@ -61,7 +61,7 @@ jobs:
         run: yarn test:e2e --passWithNoTests
 
       - name: Coverage tests
-        run: test:cov --passWithNoTests
+        run: yarn test:cov --passWithNoTests
 
   build:
     runs-on: ubuntu-latest
