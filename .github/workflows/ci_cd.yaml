@@ -17,6 +17,8 @@ jobs:
           cmd: install
 
   lint:
+    runs-on: ubuntu-latest
+
     needs: prepare-environment
 
     - name: Lint
@@ -25,6 +27,8 @@ jobs:
           cmd: build
 
   test:
+    runs-on: ubuntu-latest
+
     needs: prepare-environment
 
     - name: Unit tests
@@ -42,8 +46,20 @@ jobs:
       with:
         cmd: test:cov --passWithNoTests
 
-  release:
+  build:
+    runs-on: ubuntu-latest
+
     needs: prepare-environment
+
+    - name: Build
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: build
+
+  release:
+    runs-on: ubuntu-latest
+
+    needs: [prepare-environment, build]
 
     - name: Release
       uses: borales/actions-yarn@v2.0.0
