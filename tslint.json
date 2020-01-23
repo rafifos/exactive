@@ -16,5 +16,7 @@
     "object-literal-sort-keys": false,
     "prettier": true
   },
-  "rulesDirectory": []
+  "linterOptions": {
+    "exclude": ["dist"]
+  }
 }
