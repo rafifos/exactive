@@ -115,4 +115,6 @@ jobs:
         run: yarn install
 
       - name: Release (Using semantic-release)
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn semantic-release
