@@ -1,7 +1,7 @@
 {
   "name": "tasks",
   "version": "0.0.0-development",
-  "description": "Backend for a task management software. Powered by NestJS.",
+  "description": "Simple task management application written in TypeScript. Uses NestJS, TypeORM and Postgres.",
   "author": {
     "name": "Rafael Julio",
     "email": "hello.rjulio@gmail.com",
