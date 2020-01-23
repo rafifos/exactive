@@ -119,5 +119,6 @@ jobs:
 
       - name: Release (Using semantic-release)
         env:
+          HUSKY_SKIP_HOOKS: 1
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn semantic-release
