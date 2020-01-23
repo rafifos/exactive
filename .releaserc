@@ -8,7 +8,7 @@
         "assets": [
           {
             "path": "dist.zip",
-            "name": "tasks-${nextRelease.gitTag}",
+            "name": "tasks-${nextRelease.gitTag}.zip",
             "label": "tasks (${nextRelease.gitTag}) distribution"
           }
         ]
