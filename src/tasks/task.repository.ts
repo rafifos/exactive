@@ -66,7 +66,6 @@ export class TaskRepository extends Repository<Task> {
     this.logger.debug('Removing User Entity from Task');
     delete task.user;
 
-    this.logger.log('Task created succesfully');
     return task;
   }
 }
