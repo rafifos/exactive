@@ -1,0 +1,51 @@
+name: CI/CD
+
+on:
+  push:
+    branches: master
+
+jobs:
+  prepare-environment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+  lint:
+    needs: prepare-environment
+
+    - name: Lint
+      uses: borales/actions-yarn@v2.0.0
+      with:
+          cmd: build
+
+  test:
+    needs: prepare-environment
+
+    - name: Unit tests
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: test --passWithNoTests
+
+    - name: E2E tests
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: test:e2e --passWithNoTests
+
+    - name: Coverage tests
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: test:cov --passWithNoTests
+
+  release:
+    needs: prepare-environment
+
+    - name: Release
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: semantic-release
