@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "tasks",
   "version": "0.0.0-development",
   "description": "Simple task management application written in TypeScript. Uses NestJS, TypeORM and Postgres.",
