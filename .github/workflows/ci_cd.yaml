@@ -90,6 +90,8 @@ jobs:
         run: yarn build
 
   release:
+    needs: build
+
     runs-on: ubuntu-latest
 
     steps:
