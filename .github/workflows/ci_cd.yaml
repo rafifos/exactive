@@ -13,7 +13,7 @@ jobs:
 
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
-        
+
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -24,10 +24,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Install packages
         run: yarn install
-        
+
       - name: Lint
         run: yarn lint
 
@@ -39,7 +39,7 @@ jobs:
 
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
-        
+
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -50,10 +50,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Install packages
         run: yarn install
-        
+
       - name: Unit tests
         run: yarn test --passWithNoTests
 
@@ -63,8 +63,7 @@ jobs:
       - name: Coverage tests
         run: test:cov --passWithNoTests
 
-
-  lint:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -72,7 +71,7 @@ jobs:
 
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
-        
+
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -83,10 +82,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Install packages
         run: yarn install
-        
+
       - name: Build
         run: yarn build
 
@@ -98,7 +97,7 @@ jobs:
 
       - name: Setup Node.js for use with actions
         uses: actions/setup-node@v1.1.0
-        
+
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -109,9 +108,9 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      
+
       - name: Install packages
         run: yarn install
-        
+
       - name: Release (Using semantic-release)
         run: yarn semantic-release
