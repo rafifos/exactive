@@ -115,8 +115,7 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: yarn build
-        run: zip dist.zip dist/**/*
+        run: yarn build && zip dist.zip dist/**/*
 
       - name: Release (Using semantic-release)
         env:
