@@ -26,8 +26,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "semantic-release": "semantic-release",
-    "release": "yarn test --passWithNoTests && yarn build && yarn semantic-release"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@nestjs/common": "^6.7.2",
