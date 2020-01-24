@@ -26,11 +26,13 @@ export class TasksService {
   }
 
   async getTaskById(id: number, user: User): Promise<Task> {
-    const found = await this.taskRepository.findOne({});
+    const found = await this.taskRepository.findOne({
+      where: { id, userId: user.id },
+    });
 
     if (!found) {
       this.logger.error(
-        `User ${user.username} tried to retrieve Task with ID: ${id}, but no task matching the criteria exists on the server`
+        `User ${user.username} tried to retrieve a Task with ID: ${id}, but no Note matching the criteria exists on the server`
       );
       throw new NotFoundException(
         `Task with ID '${id}' doesn't exist on the server.`
@@ -69,7 +71,7 @@ export class TasksService {
 
     if (result.affected === 0) {
       this.logger.error(
-        `User ${user.username} tried to delete Task with ID: ${id}, but no task matching the criteria exists on the server`
+        `User ${user.username} tried to delete Task with ID: ${id}, but no Task matching the criteria exists on the server`
       );
       throw new NotFoundException(
         `Task with ID '${id}' doesn't exist on the server.`

@@ -36,7 +36,7 @@ export class TasksController {
     @GetUser() user: User
   ): Promise<Task[]> {
     this.logger.verbose(
-      `User ${user.username} retireving all tasks. Filters: ${JSON.stringify(
+      `User ${user.username} retrieving all Tasks. Filters: ${JSON.stringify(
         filterDto
       )}`
     );
@@ -48,7 +48,7 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User
   ): Promise<Task> {
-    this.logger.verbose(`User ${user.username} retrieving task with ID: ${id}`);
+    this.logger.verbose(`User ${user.username} retrieving Task with ID: ${id}`);
     return this.tasksService.getTaskById(id, user);
   }
 
@@ -59,7 +59,7 @@ export class TasksController {
     @GetUser() user: User
   ): Promise<Task> {
     this.logger.verbose(
-      `User ${user.username} creating task. Data: ${JSON.stringify(
+      `User ${user.username} creating Task. Data: ${JSON.stringify(
         createTaskDto
       )}`
     );
@@ -83,7 +83,7 @@ export class TasksController {
     @Param('id', ParseIntPipe) id: number,
     @GetUser() user: User
   ): Promise<void> {
-    this.logger.verbose(`User ${user.username} deleting task with ID: ${id}.`);
+    this.logger.verbose(`User ${user.username} deleting Task with ID: ${id}`);
     return this.tasksService.deleteTask(id, user);
   }
 }
