@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "exactive",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Simple task and notes management application written in TypeScript. Uses NestJS, TypeORM and Postgres.",
   "author": {
     "name": "Rafael Julio",
