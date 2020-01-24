@@ -25,7 +25,8 @@ export class UserRepository extends Repository<User> {
     } catch (error) {
       // Duplicate username.
       if (error.code === '23505') {
-        throw new ConflictException('username already exists on the server');
+        this.logger.error(error.detail, error.stack);
+        throw new ConflictException(error.detail);
       } else {
         this.logger.error(
           'Failed to sign-up, see the stacktrace below for more details',
