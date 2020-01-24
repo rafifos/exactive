@@ -18,8 +18,8 @@
         "assets": [
           {
             "path": "dist.zip",
-            "name": "tasks-${nextRelease.gitTag}.zip",
-            "label": "tasks (${nextRelease.gitTag}) distribution"
+            "name": "exactive-${nextRelease.gitTag}.zip",
+            "label": "exactive (${nextRelease.gitTag}) distribution"
           }
         ]
       }
